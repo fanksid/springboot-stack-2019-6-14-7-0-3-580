@@ -29,4 +29,12 @@ public class EmployeeService {
 
         EMPLOYEES.put(employee.getId(), employee);
     }
+
+    public void deleteEmployee(String id) {
+        if (!EMPLOYEES.containsKey(id)) {
+            throw new RuntimeException("Not Found Employee");
+        }
+
+        EMPLOYEES.remove(id);
+    }
 }
