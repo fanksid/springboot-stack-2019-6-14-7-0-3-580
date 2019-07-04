@@ -21,4 +21,12 @@ public class EmployeeService {
     public List<Employee> getAllEmployees() {
         return new ArrayList<>(EMPLOYEES.values());
     }
+
+    public void addEmployee(Employee employee) {
+        if (EMPLOYEES.containsKey(employee.getId())) {
+            throw new RuntimeException("Duplicated Employee");
+        }
+
+        EMPLOYEES.put(employee.getId(), employee);
+    }
 }
