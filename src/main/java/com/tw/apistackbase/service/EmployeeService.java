@@ -37,4 +37,12 @@ public class EmployeeService {
 
         EMPLOYEES.remove(id);
     }
+
+    public void updateEmployee(Employee employee) {
+        if (!EMPLOYEES.containsKey(employee.getId())) {
+            throw new RuntimeException("Not Found Employee");
+        }
+
+        EMPLOYEES.put(employee.getId(), employee);
+    }
 }
