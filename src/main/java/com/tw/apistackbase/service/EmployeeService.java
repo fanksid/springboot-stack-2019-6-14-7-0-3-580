@@ -45,4 +45,12 @@ public class EmployeeService {
 
         EMPLOYEES.put(employee.getId(), employee);
     }
+
+    public Employee getById(String id) {
+        if (!EMPLOYEES.containsKey(id)) {
+            throw new RuntimeException("Not Found Employee");
+        }
+
+        return EMPLOYEES.get(id);
+    }
 }

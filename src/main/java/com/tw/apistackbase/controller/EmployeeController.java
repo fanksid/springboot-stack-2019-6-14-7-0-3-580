@@ -50,4 +50,10 @@ public class EmployeeController {
     public void change(@RequestBody Employee employee) {
         employeeService.updateEmployee(employee);
     }
+
+    @GetMapping(path = "/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<Employee> getById(@PathVariable String id) {
+        Employee employee = employeeService.getById(id);
+        return ResponseEntity.ok(employee);
+    }
 }
